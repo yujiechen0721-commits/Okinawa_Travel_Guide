@@ -3,6 +3,5 @@ backgroundColor = "#FFFFFF"
 textColor = "#000000"
 
 [server]
-# 這行超重要！讓你所有的 .html、圖片、跳轉都能正常載入
-enableStaticServing = true
 enableCORS = false
+enableStaticServing = true  # 這行確保圖片載入
