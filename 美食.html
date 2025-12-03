@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>住宿</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 全局樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #3e3d3f; /* 整個頁面的底色設置為黑色 */
+            color: #fff; /* 頁面文字顏色設置為白色 */
+        }
+
+        /* 頁頭樣式 */
+        header {
+            background-color: #000000; /* 頁頭背景顏色 */
+            color: #fff; /* 頁頭文字顏色 */
+            padding: 10px 0;
+            position: relative;
+        }
+
+        /* 公司名稱樣式 */
+        header::before {
+            content: "J-travel"; /* 頁頭左上角顯示公司名稱 */
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #fff; /* 公司名稱文字顏色 */
+        }
+
+        /* 導航欄樣式 */
+        nav ul {
+            list-style: none; /* 移除項目符號 */
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        /* 導航欄按鈕樣式 */
+        nav ul li a {
+            color: #ffffff; /* 導航按鈕文字顏色 */
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+        }
+
+        /* 下拉選單樣式 */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #3e3d3f; /* 下拉選單背景顏色 */
+            top: 100%;
+            left: 0;
+            width: 200px;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0); /* 下拉選單陰影 */
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        /* 下拉選單按鈕樣式 */
+        nav ul li ul li {
+            width: 100%;
+        }
+
+        /* 下拉選單文字顏色 */
+        nav ul li ul li a {
+            padding: 10px;
+            color: #ffffff; /* 下拉選單按鈕文字顏色 */
+        }
+
+        /* 主要內容區域樣式 */
+        main {
+            text-align: center;
+        }
+
+        /* 大標題區域樣式 */
+        .main-title {
+            background-image: url('1200-okinawan2.jpg'); /* 大標題背景圖片 */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* 大標題文字顏色 */
+            padding: 250px 0;
+        }
+
+        .main-title h1 {
+            font-size: 2.5em;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        /* 內容區域樣式 */
+        .content-section {
+            padding: 50px 20px;
+        }
+
+        .content-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .content-links {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .content-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2em;
+            border: 1px solid #ffffff;
+            padding: 10px 20px;
+        }
+
+        /* 頁尾樣式 */
+        footer {
+            background-color: #000000; /* 頁尾背景顏色 */
+            color: #fff; /* 頁尾文字顏色 */
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- 頁頭 -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="首頁.html">首頁</a></li>
+                <li><a href="關於沖繩.html">關於沖繩</a>
+                    <ul>
+                        <li><a href="關於沖繩-沖繩簡介.html">沖繩簡介</a></li>
+                        <li><a href="關於沖繩-歷史文化.html">歷史文化</a></li>
+                        <li><a href="關於沖繩-地理位置.html">地理位置</a></li>
+                    </ul>
+                </li>
+                <li><a href="景點推薦.html">景點推薦</a>
+                    <ul>
+                        <li><a href="景點推薦-名勝古蹟.html">名勝古蹟</a></li>
+                        <li><a href="景點推薦-自然景觀.html">自然景觀</a></li>
+                        <li><a href="景點推薦-主題公園.html">主題公園</a></li>
+                        <li><a href="景點推薦-博物館和美術館.html">博物館&美術館</a></li>
+                        <li><a href="景點推薦-海灘.html">海灘</a></li>
+                    </ul>
+                </li>
+                <li><a href="美食.html">美食</a>
+                    <ul>
+                        <li><a href="美食-特色餐廳.html">特色餐廳</a></li>
+                        <li><a href="美食-當地小吃.html">當地小吃</a></li>
+                        <li><a href="美食-美食推薦.html">美食推薦</a></li>
+                        <li><a href="美食-夜生活.html">夜生活</a></li>
+                    </ul>
+                </li>
+                <li><a href="住宿.html">住宿</a>
+                    <ul>
+                        <li><a href="住宿-飯店.html">飯店</a></li>
+                        <li><a href="住宿-民宿.html">民宿</a></li>
+                        <li><a href="住宿-度假村.html">度假村</a></li>
+                        <li><a href="住宿-青年旅社.html">青年旅社</a></li>
+                        <li><a href="住宿-特色住宿.html">特色住宿</a></li>
+                    </ul>
+                </li>
+                <li><a href="旅遊攻略.html">旅遊攻略</a>
+                    <ul>
+                        <li><a href="旅遊攻略-交通.html">交通</a></li>
+                        <li><a href="旅遊攻略-購物.html">購物</a></li>
+                        <li><a href="旅遊攻略-本地習俗.html">本地習俗</a></li>
+                        <li><a href="旅遊攻略-旅遊安全指示.html">旅遊安全指示</a></li>
+                    </ul>
+                </li>
+                <li><a href="活動和節日.html">活動&節日</a>
+                    <ul>
+                        <li><a href="活動和節日-當地節日.html">當地節日</a></li>
+                        <li><a href="活動和節日-特色活動.html">特色活動</a></li>
+                        <li><a href="活動和節日-音樂會和表演.html">音樂會&表演</a></li>
+                        <li><a href="活動和節日-運動賽事.html">運動賽事</a></li>
+                        <li><a href="活動和節日-展覽.html">展覽</a></li>
+                    </ul>
+                </li>
+                <li><a href="聯絡我們.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 主要內容區域 -->
+    <main>
+        <div class="main-title">
+            <h1>美食</h1>
+        </div>
+        <section class="content-section">
+            <h2>- Food -</h2>
+            <div class="content-links">
+                <a href="美食-特色餐廳.html">特色餐廳</a>
+                <a href="美食-當地小吃.html">當地小吃</a>
+                <a href="美食-美食推薦.html">美食推薦</a>
+                <a href="美食-夜生活.html">夜生活</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>-沖繩旅遊指南-</p>
+        <p>地址：沖繩縣那霸市中央街123號</p>
+        <p>電話：+81 98-123-4567</p>
+        <p>電子郵件：info@okinawatravel.com</p>
+        <p>© 2024 沖繩旅遊指南。保留所有權利。</p>
+    </footer>
+</body>
+</html>

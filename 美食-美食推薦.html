@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美食推薦</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 全局樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* 整個頁面的底色設置為黑色 */
+            color: #fff; /* 頁面文字顏色設置為白色 */
+        }
+
+        /* 頁頭和導航列樣式 */
+        header {
+            background-color: #1c1c1c; /* 導航列背景顏色 */
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            list-style: none; /* 移除項目符號 */
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #e0e0e0; /* 導航按鈕文字顏色 */
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #333333;
+        }
+
+        nav ul li ul.dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333333; /* 下拉選單背景顏色 */
+            padding: 0;
+            border-radius: 4px;
+        }
+
+        nav ul li:hover ul.dropdown {
+            display: block;
+        }
+
+        nav ul li ul.dropdown li {
+            width: 200px;
+        }
+
+        nav ul li ul.dropdown li a {
+            padding: 10px;
+            border-bottom: 1px solid #444444;
+        }
+
+        nav ul li ul.dropdown li a:hover {
+            background-color: #444444;
+        }
+
+        nav ul li.nav-item > a {
+            pointer-events: none; /* 禁止主页面链接点击 */
+        }
+
+        /* 大標題區域樣式 */
+        .main-title {
+            background-image: url('美食推薦封面圖.jpeg'); /* 保持圖片路徑正確 */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* 大標題文字顏色 */
+            padding: 235px 20px; /* 調整內邊距來留出邊緣 */
+            margin: 20px; /* 增加外邊距來留出邊緣 */
+            border-radius: 15px; /* 可選：添加圓角效果 */
+        }
+
+        .main-title h1 {
+            font-size: 3em;
+            margin: 0;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        /* 內容區域樣式 */
+        .content-section {
+            padding: 50px 20px;
+        }
+
+        .content-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* 照片和說明的樣式 */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .photo-gallery .photo-item {
+            width: 22%; /* 確保每行四張圖片 */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .photo-gallery .photo-item img {
+            width: 250px; /* 統一圖片寬度 */
+            height: 200px; /* 統一圖片高度 */
+            object-fit: cover; /* 保持圖片比例 */
+            border-radius: 10px;
+        }
+
+        .photo-gallery .photo-item h3 {
+            color: #a7a58e; /* 小標題顏色 */
+            font-size: 1.2em;
+            margin: 10px 0 5px 0;
+        }
+
+        .photo-gallery .photo-item p {
+            color: #fff; /* 內容文字顏色 */
+            font-size: 1em;
+            text-align: left;
+            display: none; /* 初始隱藏 */
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            font-size: 1em;
+            background: none;
+            border: none;
+            color: #a7a58e; /* 修改按钮默认颜色 */
+        }
+
+        .toggle-btn:hover {
+            color: #ff0000; /* 修改按钮悬停时的颜色 */
+        }
+        /* 頁尾樣式 */
+        footer {
+                    background-color: #000000; /* 頁尾背景顏色 */
+                    color: #888888; /* 頁尾文字顏色 */
+                    text-align: center;
+                    padding: 20px 0;
+                    position: relative;
+                    bottom: 0;
+                    width: 100%;
+                }
+    </style>
+</head>
+<body>
+    <!-- 頁頭 -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="首頁.html">首頁</a></li>
+                <li class="nav-item">
+                    <a href="#">關於沖繩</a>
+                    <ul class="dropdown">
+                        <li><a href="關於沖繩-沖繩簡介.html">沖繩簡介</a></li>
+                        <li><a href="關於沖繩-歷史文化.html">歷史文化</a></li>
+                        <li><a href="關於沖繩-地理位置.html">地理位置</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">景點推薦</a>
+                    <ul class="dropdown">
+                        <li><a href="景點推薦-名勝古蹟.html">名勝古蹟</a></li>
+                        <li><a href="景點推薦-自然景觀.html">自然景觀</a></li>
+                        <li><a href="景點推薦-主題公園.html">主題公園</a></li>
+                        <li><a href="景點推薦-博物館和美術館.html">博物館&美術館</a></li>
+                        <li><a href="景點推薦-海灘.html">海灘</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">美食</a>
+                    <ul class="dropdown">
+                        <li><a href="美食-特色餐廳.html">特色餐廳</a></li>
+                        <li><a href="美食-當地小吃.html">當地小吃</a></li>
+                        <li><a href="美食-美食推薦.html">美食推薦</a></li>
+                        <li><a href="美食-夜生活.html">夜生活</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">住宿</a>
+                    <ul class="dropdown">
+                        <li><a href="住宿-飯店.html">飯店</a></li>
+                        <li><a href="住宿-民宿.html">民宿</a></li>
+                        <li><a href="住宿-度假村.html">度假村</a></li>
+                        <li><a href="住宿-青年旅社.html">青年旅社</a></li>
+                        <li><a href="住宿-特色住宿.html">特色住宿</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">旅遊攻略</a>
+                    <ul class="dropdown">
+                        <li><a href="旅遊攻略-交通.html">交通</a></li>
+                        <li><a href="旅遊攻略-購物.html">購物</a></li>
+                        <li><a href="旅遊攻略-本地習俗.html">本地習俗</a></li>
+                        <li><a href="旅遊攻略-旅遊安全指示.html">旅遊安全指示</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">活動&節日</a>
+                    <ul class="dropdown">
+                        <li><a href="活動和節日-當地節日.html">當地節日</a></li>
+                        <li><a href="活動和節日-特色活動.html">特色活動</a></li>
+                        <li><a href="活動和節日-音樂會和表演.html">音樂會&表演</a></li>
+                        <li><a href="活動和節日-運動賽事.html">運動賽事</a></li>
+                        <li><a href="活動和節日-展覽.html">展覽</a></li>
+                    </ul>
+                </li>
+                <li><a href="聯絡我們.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 大標題區域 -->
+    <div class="main-title">
+        <h1>美食推薦</h1>
+    </div>
+
+    <!-- 主要內容區域 -->
+    <main>
+        <section class="content-section">
+            <!-- 第一排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="美食推薦-沖繩蕎麥麵.jpg" alt="沖繩蕎麥麵">
+                    <h3>沖繩蕎麥麵</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>一種與日本本土拉麵不同的當地麵食。麵條用小麥粉製成，搭配豬肉排骨和魚湯，湯頭清淡而香濃。沖繩蕎麥麵通常加上紅薑和蔥花增添風味，是沖繩最具代表性的美食之一。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="美食推薦-石垣牛.jpg" alt="石垣牛">
+                    <h3>石垣牛</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>來自沖繩石垣島的高級和牛，以其柔嫩多汁、油花豐富而聞名。石垣牛可以用來製作各種料理，包括燒烤、壽喜燒和牛排。其肉質鮮嫩，入口即化，是沖繩不可錯過的美味。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="美食推薦-豬腳.jpg" alt="豬腳">
+                    <h3>豬腳</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>沖繩傳統料理中的一道經典菜肴。這道菜是用豬腳慢火燉煮，加入糖、醬油和泡盛，使豬腳入口即化，味道香甜而不膩。豬腳通常與白飯一起食用，是一道充滿風味的美食。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="美食推薦-海膽飯.jpg" alt="海膽飯">
+                    <h3>海膽飯</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>沖繩沿海地區的一道美食，選用新鮮的海膽搭配米飯。海膽的鮮甜和米飯的香糯完美結合，入口鮮美，令人回味無窮。這道菜非常適合喜愛海鮮的遊客品嚐。</p>
+                </div>
+            </div>
+
+            <!-- 第二排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="美食推薦-塔可飯.jpg" alt="塔可飯">
+                    <h3>塔可飯</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>將墨西哥塔可與日本米飯相結合的創意料理。這道菜包括塔可肉、生菜、番茄、起司和塔可醬，全部放在熱騰騰的白米飯上。塔可飯是沖繩駐日美軍基地附近流行的美食，現在已成為當地的一道特色菜。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="美食推薦-沖繩蓮藕餅.jpg" alt="沖繩蓮藕餅">
+                    <h3>沖繩蓮藕餅</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>將蓮藕切成薄片後油炸，撒上鹽或調味料製成的脆片。這道小吃口感酥脆，帶有蓮藕的清香，是沖繩當地人和遊客喜愛的小零食。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="美食推薦-島豆腐.jpg" alt="島豆腐">
+                    <h3>島豆腐</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>沖繩特有的一種豆腐，與日本本土的豆腐相比更為結實耐煮。島豆腐可以用來製作各種料理，包括湯、炒菜和燒烤。其口感緊實，有著濃郁的豆香味，是沖繩飲食中的重要食材。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="美食推薦-阿古豬.jpg" alt="阿古豬">
+                    <h3>阿古豬</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>沖繩特有的一種黑豬肉，以其細膩的肉質和豐富的油花聞名。阿古豬肉質鮮嫩，適合用來做燒烤、火鍋和燉菜。這種豬肉的獨特風味使其成為沖繩高級餐廳中的常見食材。</p>
+                </div>
+            </div>
+            <!-- 第三排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="美食推薦-島胡椒炒蛋.jpg" alt="島胡椒炒蛋">
+                    <h3>島胡椒炒蛋</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>島胡椒是一種沖繩特有的辣椒，常被用來調味各種菜餚。島胡椒炒蛋是將這種辣椒與雞蛋一起炒製而成，口感辛香，帶有淡淡的辣味，是一道簡單卻美味的家常菜。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="美食推薦-沖繩羊羹.jpg" alt="沖繩羊羹">
+                    <h3>沖繩羊羹</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>一種使用紅豆和黑糖製成的甜點。這種羊羹口感細膩，甜度適中，帶有濃郁的黑糖香氣。它常被作為伴手禮，深受當地人和遊客的喜愛。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="美食推薦-苦瓜天婦羅.jpg" alt="苦瓜天婦羅">
+                    <h3>苦瓜天婦羅</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>將苦瓜切片裹上麵糊油炸製成的。這道小吃將苦瓜的微苦味與天婦羅的酥脆口感結合在一起，形成獨特的風味。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="美食推薦-紅芋冰淇淋.jpg" alt="紅芋冰淇淋">
+                    <h3>紅芋冰淇淋</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>用沖繩當地的紅芋製作而成，顏色鮮豔，口感綿密細膩，帶有紅芋的香甜。在炎熱的夏季特別受歡迎，是沖繩著名的甜點之一。</p>
+                </div>
+            </div>
+
+            <!-- 第四排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="美食推薦-鰹魚片.jpg" alt="鰹魚片">
+                    <h3>鰹魚片</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>將鰹魚略微燒烤後切成薄片，搭配醬油、薑蓉和大蒜一起食用。保留了鰹魚的鮮美，口感鮮嫩，常常作為開胃菜或下酒菜，是沖繩人喜愛的一道美食。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="美食推薦-花生豆腐.jpg" alt="花生豆腐">
+                    <h3>花生豆腐</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>用花生和地瓜澱粉製作的特有豆腐。這種豆腐口感滑嫩，帶有淡淡的花生香氣，常常作為涼菜或甜點食用。其獨特的風味使其成為沖繩的一道特色美食。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="美食推薦-沖繩咖喱.jpg" alt="沖繩咖喱">
+                    <h3>沖繩咖喱</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>一種帶有當地風味的日式咖喱，通常會加入當地特有的食材，如苦瓜、蓮藕和島豆腐。這種咖喱口感濃郁，辛香四溢，與米飯搭配，形成美味的沖繩風味餐。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="美食推薦-泡盛冰.jpg" alt="泡盛冰">
+                    <h3>泡盛冰</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>將沖繩特有的烈酒泡盛融入冰淇淋中製作而成。這種冰淇淋口感順滑，帶有淡淡的酒香和清涼感，是沖繩夏季受歡迎的甜點。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>&copy; 2024 沖繩旅遊網. 保留所有權利.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const description = button.nextElementSibling;
+                if (description.style.display === 'none' || description.style.display === '') {
+                    description.style.display = 'block';
+                    button.textContent = '△';
+                } else {
+                    description.style.display = 'none';
+                    button.textContent = '▽';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

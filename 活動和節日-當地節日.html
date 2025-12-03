@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>當地節日</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 全局樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* 整個頁面的底色設置為黑色 */
+            color: #fff; /* 頁面文字顏色設置為白色 */
+        }
+
+        /* 頁頭和導航列樣式 */
+        header {
+            background-color: #1c1c1c; /* 導航列背景顏色 */
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            list-style: none; /* 移除項目符號 */
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #e0e0e0; /* 導航按鈕文字顏色 */
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #333333;
+        }
+
+        nav ul li ul.dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333333; /* 下拉選單背景顏色 */
+            padding: 0;
+            border-radius: 4px;
+        }
+
+        nav ul li:hover ul.dropdown {
+            display: block;
+        }
+
+        nav ul li ul.dropdown li {
+            width: 200px;
+        }
+
+        nav ul li ul.dropdown li a {
+            padding: 10px;
+            border-bottom: 1px solid #444444;
+        }
+
+        nav ul li ul.dropdown li a:hover {
+            background-color: #444444;
+        }
+
+        nav ul li.nav-item > a {
+            pointer-events: none; /* 禁止主页面链接点击 */
+        }
+
+        /* 大標題區域樣式 */
+        .main-title {
+            background-image: url('當地節日封面圖.jpg'); /* 保持圖片路徑正確 */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* 大標題文字顏色 */
+            padding: 235px 20px; /* 調整內邊距來留出邊緣 */
+            margin: 20px; /* 增加外邊距來留出邊緣 */
+            border-radius: 15px; /* 可選：添加圓角效果 */
+        }
+
+        .main-title h1 {
+            font-size: 3em;
+            margin: 0;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        /* 內容區域樣式 */
+        .content-section {
+            padding: 50px 20px;
+        }
+
+        .content-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* 照片和說明的樣式 */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .photo-gallery .photo-item {
+            width: 22%; /* 確保每行四張圖片 */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .photo-gallery .photo-item img {
+            width: 250px; /* 統一圖片寬度 */
+            height: 200px; /* 統一圖片高度 */
+            object-fit: cover; /* 保持圖片比例 */
+            border-radius: 10px;
+        }
+
+        .photo-gallery .photo-item h3 {
+            color: #a7a58e; /* 小標題顏色 */
+            font-size: 1.2em;
+            margin: 10px 0 5px 0;
+        }
+
+        .photo-gallery .photo-item p {
+            color: #fff; /* 內容文字顏色 */
+            font-size: 1em;
+            text-align: left;
+            display: none; /* 初始隱藏 */
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            font-size: 1em;
+            background: none;
+            border: none;
+            color: #a7a58e; /* 修改按钮默认颜色 */
+        }
+
+        .toggle-btn:hover {
+            color: #ff0000; /* 修改按钮悬停时的颜色 */
+        }
+        /* 頁尾樣式 */
+        footer {
+                    background-color: #000000; /* 頁尾背景顏色 */
+                    color: #888888; /* 頁尾文字顏色 */
+                    text-align: center;
+                    padding: 20px 0;
+                    position: relative;
+                    bottom: 0;
+                    width: 100%;
+                }
+    </style>
+</head>
+<body>
+    <!-- 頁頭 -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="首頁.html">首頁</a></li>
+                <li class="nav-item">
+                    <a href="#">關於沖繩</a>
+                    <ul class="dropdown">
+                        <li><a href="關於沖繩-沖繩簡介.html">沖繩簡介</a></li>
+                        <li><a href="關於沖繩-歷史文化.html">歷史文化</a></li>
+                        <li><a href="關於沖繩-地理位置.html">地理位置</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">景點推薦</a>
+                    <ul class="dropdown">
+                        <li><a href="景點推薦-名勝古蹟.html">名勝古蹟</a></li>
+                        <li><a href="景點推薦-自然景觀.html">自然景觀</a></li>
+                        <li><a href="景點推薦-主題公園.html">主題公園</a></li>
+                        <li><a href="景點推薦-博物館和美術館.html">博物館&美術館</a></li>
+                        <li><a href="景點推薦-海灘.html">海灘</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">美食</a>
+                    <ul class="dropdown">
+                        <li><a href="美食-特色餐廳.html">特色餐廳</a></li>
+                        <li><a href="美食-當地小吃.html">當地小吃</a></li>
+                        <li><a href="美食-美食推薦.html">美食推薦</a></li>
+                        <li><a href="美食-夜生活.html">夜生活</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">住宿</a>
+                    <ul class="dropdown">
+                        <li><a href="住宿-飯店.html">飯店</a></li>
+                        <li><a href="住宿-民宿.html">民宿</a></li>
+                        <li><a href="住宿-度假村.html">度假村</a></li>
+                        <li><a href="住宿-青年旅社.html">青年旅社</a></li>
+                        <li><a href="住宿-特色住宿.html">特色住宿</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">旅遊攻略</a>
+                    <ul class="dropdown">
+                        <li><a href="旅遊攻略-交通.html">交通</a></li>
+                        <li><a href="旅遊攻略-購物.html">購物</a></li>
+                        <li><a href="旅遊攻略-本地習俗.html">本地習俗</a></li>
+                        <li><a href="旅遊攻略-旅遊安全指示.html">旅遊安全指示</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">活動&節日</a>
+                    <ul class="dropdown">
+                        <li><a href="活動和節日-當地節日.html">當地節日</a></li>
+                        <li><a href="活動和節日-特色活動.html">特色活動</a></li>
+                        <li><a href="活動和節日-音樂會和表演.html">音樂會&表演</a></li>
+                        <li><a href="活動和節日-運動賽事.html">運動賽事</a></li>
+                        <li><a href="活動和節日-展覽.html">展覽</a></li>
+                    </ul>
+                </li>
+                <li><a href="聯絡我們.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 大標題區域 -->
+    <div class="main-title">
+        <h1>當地節日</h1>
+    </div>
+
+    <!-- 主要內容區域 -->
+    <main>
+        <section class="content-section">
+            <!-- 第一排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="當地節日-那霸大綱擺.png" alt="那霸大綱擺">
+                    <h3>那霸大綱擺</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>時間：每年十月
+                        <br>地點：那霸市
+                        <br>介紹：沖繩最大的綱擺活動之一，已有數百年歷史。參與者分為東西兩隊，共同拉動一條巨大的稻草繩。象徵著祈求豐收和健康，同時也充滿了歡樂和競賽的氣氛。
+                    </p>
+                </div>
+                <div class="photo-item">
+                    <img src="當地節日-波之上祭.jpg" alt="波之上祭">
+                    <h3>波之上祭</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>時間：每年一月
+                        <br>地點：那霸市波之上神社
+                        <br>介紹：這是沖繩重要的新年祭典之一，包括傳統的祈福儀式、舞蹈和音樂表演。當地居民和遊客都會前來參加，祈求新年的幸福和平安。
+                    </p>
+                </div>
+                <div class="photo-item">
+                    <img src="當地節日-海洋博公園夏日祭.png" alt="海洋博公園夏日祭">
+                    <h3>海洋博公園夏日祭</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>時間：每年七月或八月
+                        <br>地點：沖繩北部的海洋博公園
+                        <br>介紹：這個節日包括煙火表演、文化展示和兒童遊戲。遊客可以在這裡體驗沖繩的夏日風情，欣賞美麗的煙火和傳統表演。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 第二排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="當地節日-Eisa舞蹈節.png" alt="Eisa舞蹈節">
+                    <h3>Eisa舞蹈節</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>時間：每年八月
+                        <br>地點：沖繩全島
+                        <br>介紹：Eisa是沖繩的一種傳統舞蹈，通常在盂蘭盆節期間表演。舞者身穿色彩鮮豔的服裝，隨著太鼓和三線的音樂節奏跳舞。這個節日是體驗沖繩傳統文化的絕佳機會。
+                    </p>
+                </div>
+                <div class="photo-item">
+                    <img src="當地節日-全島角力大會.png" alt="全島角力大會">
+                    <h3>全島角力大會</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>時間：每年九月
+                        <br>地點：沖繩市
+                        <br>介紹：這是一個大型的Eisa舞蹈比賽，來自全島的Eisa團隊齊聚一堂，展示他們的舞蹈技藝。節日氣氛熱烈，是感受沖繩活力和文化的好時機。
+                    </p>
+                </div>
+                <div class="photo-item">
+                    <img src="當地節日-沖繩國際電影節.png" alt="沖繩國際電影節">
+                    <h3>沖繩國際電影節</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>時間：每年四月
+                        <br>地點：那霸市和沖繩各地
+                        <br>介紹：這個電影節吸引了來自世界各地的電影製作人和影迷，展示了各類電影作品。除了電影放映，還有紅毯儀式、現場音樂會和各種娛樂活動。
+                    </p>
+                </div>
+            </div>
+            <!-- 第三排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="當地節日-糸滿哈利.png" alt="糸滿哈利">
+                    <h3>糸滿哈利</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>時間：每年五月
+                        <br>地點：糸滿市
+                        <br>介紹：這是一個傳統的龍舟賽，起源於中國的端午節。參賽隊伍在海上競速，賽事激烈且充滿趣味。這個節日還包括各種文化表演和美食攤位。
+                    </p>
+                </div>
+                <div class="photo-item">
+                    <img src="當地節日-嘉手納花火大會.jpg" alt="嘉手納花火大會">
+                    <h3>嘉手納花火大會</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>時間：每年七月
+                        <br>地點：嘉手納町
+                        <br>介紹：這是一個盛大的煙火表演節日，吸引了數萬名遊客。除了煙火表演，還有音樂會、舞蹈表演和美食攤位，整個活動充滿了歡樂和節日氣氛。
+                    </p>
+                </div>
+                <div class="photo-item">
+                    <img src="當地節日-首里城祭.png" alt="首里城祭">
+                    <h3>首里城祭</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>時間：每年十一月
+                        <br>地點：那霸市首里城
+                        <br>介紹：這個節日重現了琉球王國時代的歷史和文化，包括傳統的王朝儀式、舞蹈和音樂表演。遊客可以參加各種活動，深入了解沖繩的歷史和文化遺產。
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>&copy; 2024 沖繩旅遊網. 保留所有權利.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const description = button.nextElementSibling;
+                if (description.style.display === 'none' || description.style.display === '') {
+                    description.style.display = 'block';
+                    button.textContent = '△';
+                } else {
+                    description.style.display = 'none';
+                    button.textContent = '▽';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

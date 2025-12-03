@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運動賽事</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 全局樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* 整個頁面的底色設置為黑色 */
+            color: #fff; /* 頁面文字顏色設置為白色 */
+        }
+
+        /* 頁頭和導航列樣式 */
+        header {
+            background-color: #1c1c1c; /* 導航列背景顏色 */
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            list-style: none; /* 移除項目符號 */
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #e0e0e0; /* 導航按鈕文字顏色 */
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #333333;
+        }
+
+        nav ul li ul.dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333333; /* 下拉選單背景顏色 */
+            padding: 0;
+            border-radius: 4px;
+        }
+
+        nav ul li:hover ul.dropdown {
+            display: block;
+        }
+
+        nav ul li ul.dropdown li {
+            width: 200px;
+        }
+
+        nav ul li ul.dropdown li a {
+            padding: 10px;
+            border-bottom: 1px solid #444444;
+        }
+
+        nav ul li ul.dropdown li a:hover {
+            background-color: #444444;
+        }
+
+        nav ul li.nav-item > a {
+            pointer-events: none; /* 禁止主页面链接点击 */
+        }
+
+        /* 大標題區域樣式 */
+        .main-title {
+            background-image: url('運動賽事封面圖.png'); /* 保持圖片路徑正確 */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* 大標題文字顏色 */
+            padding: 235px 20px; /* 調整內邊距來留出邊緣 */
+            margin: 20px; /* 增加外邊距來留出邊緣 */
+            border-radius: 15px; /* 可選：添加圓角效果 */
+        }
+
+        .main-title h1 {
+            font-size: 3em;
+            margin: 0;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        /* 內容區域樣式 */
+        .content-section {
+            padding: 50px 20px;
+        }
+
+        .content-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* 照片和說明的樣式 */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .photo-gallery .photo-item {
+            width: 22%; /* 確保每行四張圖片 */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .photo-gallery .photo-item img {
+            width: 250px; /* 統一圖片寬度 */
+            height: 200px; /* 統一圖片高度 */
+            object-fit: cover; /* 保持圖片比例 */
+            border-radius: 10px;
+        }
+
+        .photo-gallery .photo-item h3 {
+            color: #a7a58e; /* 小標題顏色 */
+            font-size: 1.2em;
+            margin: 10px 0 5px 0;
+        }
+
+        .photo-gallery .photo-item p {
+            color: #fff; /* 內容文字顏色 */
+            font-size: 1em;
+            text-align: left;
+            display: none; /* 初始隱藏 */
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            font-size: 1em;
+            background: none;
+            border: none;
+            color: #a7a58e; /* 修改按钮默认颜色 */
+        }
+
+        .toggle-btn:hover {
+            color: #ff0000; /* 修改按钮悬停时的颜色 */
+        }
+        /* 頁尾樣式 */
+        footer {
+                    background-color: #000000; /* 頁尾背景顏色 */
+                    color: #888888; /* 頁尾文字顏色 */
+                    text-align: center;
+                    padding: 20px 0;
+                    position: relative;
+                    bottom: 0;
+                    width: 100%;
+                }
+    </style>
+</head>
+<body>
+    <!-- 頁頭 -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="首頁.html">首頁</a></li>
+                <li class="nav-item">
+                    <a href="#">關於沖繩</a>
+                    <ul class="dropdown">
+                        <li><a href="關於沖繩-沖繩簡介.html">沖繩簡介</a></li>
+                        <li><a href="關於沖繩-歷史文化.html">歷史文化</a></li>
+                        <li><a href="關於沖繩-地理位置.html">地理位置</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">景點推薦</a>
+                    <ul class="dropdown">
+                        <li><a href="景點推薦-名勝古蹟.html">名勝古蹟</a></li>
+                        <li><a href="景點推薦-自然景觀.html">自然景觀</a></li>
+                        <li><a href="景點推薦-主題公園.html">主題公園</a></li>
+                        <li><a href="景點推薦-博物館和美術館.html">博物館&美術館</a></li>
+                        <li><a href="景點推薦-海灘.html">海灘</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">美食</a>
+                    <ul class="dropdown">
+                        <li><a href="美食-特色餐廳.html">特色餐廳</a></li>
+                        <li><a href="美食-當地小吃.html">當地小吃</a></li>
+                        <li><a href="美食-美食推薦.html">美食推薦</a></li>
+                        <li><a href="美食-夜生活.html">夜生活</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">住宿</a>
+                    <ul class="dropdown">
+                        <li><a href="住宿-飯店.html">飯店</a></li>
+                        <li><a href="住宿-民宿.html">民宿</a></li>
+                        <li><a href="住宿-度假村.html">度假村</a></li>
+                        <li><a href="住宿-青年旅社.html">青年旅社</a></li>
+                        <li><a href="住宿-特色住宿.html">特色住宿</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">旅遊攻略</a>
+                    <ul class="dropdown">
+                        <li><a href="旅遊攻略-交通.html">交通</a></li>
+                        <li><a href="旅遊攻略-購物.html">購物</a></li>
+                        <li><a href="旅遊攻略-本地習俗.html">本地習俗</a></li>
+                        <li><a href="旅遊攻略-旅遊安全指示.html">旅遊安全指示</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">活動&節日</a>
+                    <ul class="dropdown">
+                        <li><a href="活動和節日-當地節日.html">當地節日</a></li>
+                        <li><a href="活動和節日-特色活動.html">特色活動</a></li>
+                        <li><a href="活動和節日-音樂會和表演.html">音樂會&表演</a></li>
+                        <li><a href="活動和節日-運動賽事.html">運動賽事</a></li>
+                        <li><a href="活動和節日-展覽.html">展覽</a></li>
+                    </ul>
+                </li>
+                <li><a href="聯絡我們.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 大標題區域 -->
+    <div class="main-title">
+        <h1>運動賽事</h1>
+    </div>
+
+    <!-- 主要內容區域 -->
+    <main>
+        <section class="content-section">
+            <!-- 第一排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="運動賽事-沖繩馬拉松.jpg" alt="沖繩馬拉松">
+                    <h3>沖繩馬拉松</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>介紹：沖繩馬拉松是沖繩最著名的跑步賽事之一，吸引了來自世界各地的跑者。賽事包括全程馬拉松和半程馬拉松，路線穿越那霸市和周邊地區，參賽者可以沿途欣賞到沖繩的美麗景色和文化地標。
+                        <br>時間：每年2月
+                        <br>地點：那霸市及周邊地區
+                    </p>
+                </div>
+                <div class="photo-item">
+                    <img src="運動賽事-那霸哈里船比賽.png" alt="那霸哈里船比賽">
+                    <h3>那霸哈里船比賽</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>介紹：這是一項傳統的龍舟比賽，起源於中國的端午節。比賽通常在那霸港舉行，吸引了來自全島的團隊參賽。比賽氛圍熱鬧，觀眾可以在岸邊為參賽隊伍加油助威，體驗沖繩的海洋文化。
+                        <br>時間：每年5月
+                        <br>地點：那霸港
+                    </p>
+                </div>
+                <div class="photo-item">
+                    <img src="運動賽事-Tour de Okinawa.jpg" alt="Tour de Okinawa">
+                    <h3>Tour de Okinawa</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>介紹：這是一年一度的自行車賽事，吸引了國內外的自行車愛好者參加。賽事包括不同距離的路線，從短距離的家庭騎行到挑戰性的長距離賽道。騎行路線經過沖繩的沿海公路和山區，風景優美。
+                        <br>時間：每年11月
+                        <br>地點：沖繩本島及周邊地區
+                    </p>
+                </div>
+            </div>
+
+            <!-- 第二排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="運動賽事-沖繩國際拉力賽.png" alt="沖繩國際拉力賽">
+                    <h3>沖繩國際拉力賽</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>介紹：這是沖繩最重要的汽車拉力賽事之一，吸引了來自日本各地和海外的車隊參賽。賽事在崎嶇的山路和海岸公路上進行，對參賽者的駕駛技術和車輛性能都是極大的考驗。
+                        <br>時間：每年12月
+                        <br>地點：沖繩本島
+                    </p>
+                </div>
+                <div class="photo-item">
+                    <img src="運動賽事-沖繩高爾夫錦標賽.jpg" alt="沖繩高爾夫錦標賽">
+                    <h3>沖繩高爾夫錦標賽</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>介紹：沖繩高爾夫錦標賽是一項國際知名的高爾夫賽事，吸引了來自世界各地的高爾夫選手參加。。這些賽事通常在多個頂級球場輪流舉行，是高爾夫愛好者的一大盛事。
+                        <br>時間：每年秋季
+                        <br>地點：沖繩各大高爾夫球場
+                    </p>
+                </div>
+                <div class="photo-item">
+                    <img src="運動賽事-沖繩三項鐵人賽.png" alt="沖繩三項鐵人賽">
+                    <h3>沖繩三項鐵人賽</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>介紹：沖繩三項鐵人賽是一項挑戰體能極限的賽事，包括游泳、自行車和跑步三個項目。賽道設置在風景如畫的沿海地區，參賽者可以在比賽中享受沖繩的自然美景。
+                        <br>時間：每年春季
+                        <br>地點：沖繩本島
+                    </p>
+                </div>
+            </div>
+            <!-- 第三排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="運動賽事-沖繩國際羽毛球公開賽.jpg" alt="沖繩國際羽毛球公開賽">
+                    <h3>沖繩國際羽毛球公開賽</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>介紹：這是國際羽毛球聯合會認可的賽事，吸引了來自世界各地的頂尖羽毛球選手。賽事在那霸市內的體育館舉行，觀眾可以觀賞到高水平的羽毛球比賽。
+                        <br>時間：每年夏季
+                        <br>地點：那霸市
+                    </p>
+                </div>
+                <div class="photo-item">
+                    <img src="運動賽事-沖繩傳統摔角比賽.png" alt="沖繩傳統摔角比賽">
+                    <h3>沖繩傳統摔角比賽</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>介紹：這是一項具有歷史和文化意義的運動，比賽規則類似於日本相撲，但具有沖繩地方特色。比賽在傳統的土俵上進行，參賽者穿著特製的摔角服裝，吸引了許多觀眾前來觀賞。
+                        <br>時間：不定期
+                        <br>地點：沖繩各地的傳統表演場地
+                    </p>
+                </div>
+                <div class="photo-item">
+                    <img src="運動賽事-沖繩棒球賽.png" alt="沖繩棒球賽">
+                    <h3>沖繩棒球賽</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>介紹：棒球在沖繩非常受歡迎，許多高中和大學的棒球隊定期舉辦比賽。沖繩還有專業的棒球聯賽，賽季期間在各大球場舉行精彩的比賽。
+                        <br>時間：賽季期間
+                        <br>地點：沖繩各地的棒球場
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>&copy; 2024 沖繩旅遊網. 保留所有權利.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const description = button.nextElementSibling;
+                if (description.style.display === 'none' || description.style.display === '') {
+                    description.style.display = 'block';
+                    button.textContent = '△';
+                } else {
+                    description.style.display = 'none';
+                    button.textContent = '▽';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
