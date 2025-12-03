@@ -20,6 +20,4 @@ https://yujiechen0721-commits.github.io/Okinawa_Travel_Guide/
 - 響應式設計(RWD)
 - 部署於GitHub Pages
 
-歡迎 star 或分享給即將要去沖繩的朋友！
-
-Made with ♡ by yujiechen0721
+Made by yujiechen0721
