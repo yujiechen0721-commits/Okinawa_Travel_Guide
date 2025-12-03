@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主題公園</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 全局樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* 整個頁面的底色設置為黑色 */
+            color: #fff; /* 頁面文字顏色設置為白色 */
+        }
+
+        /* 頁頭和導航列樣式 */
+        header {
+            background-color: #1c1c1c; /* 導航列背景顏色 */
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            list-style: none; /* 移除項目符號 */
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #e0e0e0; /* 導航按鈕文字顏色 */
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #333333;
+        }
+
+        nav ul li ul.dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333333; /* 下拉選單背景顏色 */
+            padding: 0;
+            border-radius: 4px;
+        }
+
+        nav ul li:hover ul.dropdown {
+            display: block;
+        }
+
+        nav ul li ul.dropdown li {
+            width: 200px;
+        }
+
+        nav ul li ul.dropdown li a {
+            padding: 10px;
+            border-bottom: 1px solid #444444;
+        }
+
+        nav ul li ul.dropdown li a:hover {
+            background-color: #444444;
+        }
+
+        nav ul li.nav-item > a {
+            pointer-events: none; /* 禁止主页面链接点击 */
+        }
+
+        /* 大標題區域樣式 */
+        .main-title {
+            background-image: url('主題公園封面圖.jpg'); /* 保持圖片路徑正確 */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* 大標題文字顏色 */
+            padding: 235px 20px; /* 調整內邊距來留出邊緣 */
+            margin: 20px; /* 增加外邊距來留出邊緣 */
+            border-radius: 15px; /* 可選：添加圓角效果 */
+        }
+
+        .main-title h1 {
+            font-size: 3em;
+            margin: 0;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        /* 內容區域樣式 */
+        .content-section {
+            padding: 50px 20px;
+        }
+
+        .content-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* 照片和說明的樣式 */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .photo-gallery .photo-item {
+            width: 22%; /* 確保每行四張圖片 */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .photo-gallery .photo-item img {
+            width: 250px; /* 統一圖片寬度 */
+            height: 200px; /* 統一圖片高度 */
+            object-fit: cover; /* 保持圖片比例 */
+            border-radius: 10px;
+        }
+
+        .photo-gallery .photo-item h3 {
+            color: #a7a58e; /* 小標題顏色 */
+            font-size: 1.2em;
+            margin: 10px 0 5px 0;
+        }
+
+        .photo-gallery .photo-item p {
+            color: #fff; /* 內容文字顏色 */
+            font-size: 1em;
+            text-align: left;
+            display: none; /* 初始隱藏 */
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            font-size: 1em;
+            background: none;
+            border: none;
+            color: #a7a58e; /* 修改按钮默认颜色 */
+        }
+
+        .toggle-btn:hover {
+            color: #ff0000; /* 修改按钮悬停时的颜色 */
+        }
+        /* 頁尾樣式 */
+        footer {
+                    background-color: #000000; /* 頁尾背景顏色 */
+                    color: #888888; /* 頁尾文字顏色 */
+                    text-align: center;
+                    padding: 20px 0;
+                    position: relative;
+                    bottom: 0;
+                    width: 100%;
+                }
+    </style>
+</head>
+<body>
+    <!-- 頁頭 -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="首頁.html">首頁</a></li>
+                <li class="nav-item">
+                    <a href="#">關於沖繩</a>
+                    <ul class="dropdown">
+                        <li><a href="關於沖繩-沖繩簡介.html">沖繩簡介</a></li>
+                        <li><a href="關於沖繩-歷史文化.html">歷史文化</a></li>
+                        <li><a href="關於沖繩-地理位置.html">地理位置</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">景點推薦</a>
+                    <ul class="dropdown">
+                        <li><a href="景點推薦-名勝古蹟.html">名勝古蹟</a></li>
+                        <li><a href="景點推薦-自然景觀.html">自然景觀</a></li>
+                        <li><a href="景點推薦-主題公園.html">主題公園</a></li>
+                        <li><a href="景點推薦-博物館和美術館.html">博物館&美術館</a></li>
+                        <li><a href="景點推薦-海灘.html">海灘</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">美食</a>
+                    <ul class="dropdown">
+                        <li><a href="美食-特色餐廳.html">特色餐廳</a></li>
+                        <li><a href="美食-當地小吃.html">當地小吃</a></li>
+                        <li><a href="美食-美食推薦.html">美食推薦</a></li>
+                        <li><a href="美食-夜生活.html">夜生活</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">住宿</a>
+                    <ul class="dropdown">
+                        <li><a href="住宿-飯店.html">飯店</a></li>
+                        <li><a href="住宿-民宿.html">民宿</a></li>
+                        <li><a href="住宿-度假村.html">度假村</a></li>
+                        <li><a href="住宿-青年旅社.html">青年旅社</a></li>
+                        <li><a href="住宿-特色住宿.html">特色住宿</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">旅遊攻略</a>
+                    <ul class="dropdown">
+                        <li><a href="旅遊攻略-交通.html">交通</a></li>
+                        <li><a href="旅遊攻略-購物.html">購物</a></li>
+                        <li><a href="旅遊攻略-本地習俗.html">本地習俗</a></li>
+                        <li><a href="旅遊攻略-旅遊安全指示.html">旅遊安全指示</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">活動&節日</a>
+                    <ul class="dropdown">
+                        <li><a href="活動和節日-當地節日.html">當地節日</a></li>
+                        <li><a href="活動和節日-特色活動.html">特色活動</a></li>
+                        <li><a href="活動和節日-音樂會和表演.html">音樂會&表演</a></li>
+                        <li><a href="活動和節日-運動賽事.html">運動賽事</a></li>
+                        <li><a href="活動和節日-展覽.html">展覽</a></li>
+                    </ul>
+                </li>
+                <li><a href="聯絡我們.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 大標題區域 -->
+    <div class="main-title">
+        <h1>主題公園</h1>
+    </div>
+
+    <!-- 主要內容區域 -->
+    <main>
+        <section class="content-section">
+            <!-- 第一排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="主題公園-美麗海水族館.jpg" alt="美麗海水族館">
+                    <h3>美麗海水族館</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於沖繩本島北部，是世界上最大的水族館之一。展示了來自沖繩周圍海域的豐富海洋生物，包括鯨鯊、海龜和珊瑚礁。館內還有一個巨大的水族箱，可以近距離觀賞海洋生物的生活。館內的觸摸池和海豚表演也深受遊客喜愛。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="主題公園-OKINAWA水果樂園.jpg" alt="OKINAWA水果樂園">
+                    <h3>OKINAWA水果樂園</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於沖繩本島北部，以熱帶水果為主題的樂園。可以在這裡品嚐新鮮的熱帶水果，參加水果採摘活動，並且學習有關水果的知識。樂園內還有各種以水果為主題的遊樂設施和展示，適合全家人一同遊玩。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="主題公園-琉球村.jpg" alt="琉球村">
+                    <h3>琉球村</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於沖繩本島北部，是一個展示琉球傳統文化和手工藝品的主題公園。可以在這裡體驗琉球的舞蹈、音樂和工藝品製作，還可以品嚐當地美食。琉球村還有一個古老的村落展示區，展示了琉球傳統的建築風格和生活方式，是了解琉球文化的絕佳場所。</p>
+                </div>
+            </div>
+
+            <!-- 第二排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="主題公園-玉泉洞公園.jpg" alt="玉泉洞公園">
+                    <h3>玉泉洞公園</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於沖繩本島的南部，是一個擁有壯觀地下洞穴和石灰岩地形的主題公園。這裡的玉泉洞是日本最大的鍾乳石洞之一，遊客可以在洞穴內觀賞各種奇特的地質景觀和地下河流。公園還有步道和觀景台，讓遊客可以欣賞周圍的自然美景。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="主題公園-美國村.jpg" alt="美國村">
+                    <h3>美國村</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於沖繩本島的中部，是擁有美式風格的購物和娛樂區，有各種品牌店、餐廳和娛樂設施。美國村還有一個海灘公園，遊客可以在這裡享受海灘活動和美麗的海景。晚上燈火輝煌，是感受夜生活的好去處。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="主題公園-體驗王國.jpg" alt="體驗王國">
+                    <h3>體驗王國</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於沖繩本島西海岸，是以體驗琉球文化為主題的公園。這裡重現了琉球王國時期的街道和建築，可以參加各種手工藝工作坊，如陶藝、染織和琉球玻璃製作。公園內還有傳統的琉球舞蹈和音樂表演，讓遊客深入了解沖繩的歷史和文化。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>&copy; 2024 沖繩旅遊網. 保留所有權利.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const description = button.nextElementSibling;
+                if (description.style.display === 'none' || description.style.display === '') {
+                    description.style.display = 'block';
+                    button.textContent = '△';
+                } else {
+                    description.style.display = 'none';
+                    button.textContent = '▽';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

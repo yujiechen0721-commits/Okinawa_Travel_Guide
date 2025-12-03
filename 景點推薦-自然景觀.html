@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自然景觀</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 全局樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* 整個頁面的底色設置為黑色 */
+            color: #fff; /* 頁面文字顏色設置為白色 */
+        }
+
+        /* 頁頭和導航列樣式 */
+        header {
+            background-color: #1c1c1c; /* 導航列背景顏色 */
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            list-style: none; /* 移除項目符號 */
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #e0e0e0; /* 導航按鈕文字顏色 */
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #333333;
+        }
+
+        nav ul li ul.dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333333; /* 下拉選單背景顏色 */
+            padding: 0;
+            border-radius: 4px;
+        }
+
+        nav ul li:hover ul.dropdown {
+            display: block;
+        }
+
+        nav ul li ul.dropdown li {
+            width: 200px;
+        }
+
+        nav ul li ul.dropdown li a {
+            padding: 10px;
+            border-bottom: 1px solid #444444;
+        }
+
+        nav ul li ul.dropdown li a:hover {
+            background-color: #444444;
+        }
+
+        nav ul li.nav-item > a {
+            pointer-events: none; /* 禁止主页面链接点击 */
+        }
+
+        /* 大標題區域樣式 */
+        .main-title {
+            background-image: url('自然景觀封面圖.jpg'); /* 保持圖片路徑正確 */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* 大標題文字顏色 */
+            padding: 235px 20px; /* 調整內邊距來留出邊緣 */
+            margin: 20px; /* 增加外邊距來留出邊緣 */
+            border-radius: 15px; /* 可選：添加圓角效果 */
+        }
+
+        .main-title h1 {
+            font-size: 3em;
+            margin: 0;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        /* 內容區域樣式 */
+        .content-section {
+            padding: 50px 20px;
+        }
+
+        .content-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* 照片和說明的樣式 */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .photo-gallery .photo-item {
+            width: 22%; /* 確保每行四張圖片 */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .photo-gallery .photo-item img {
+            width: 250px; /* 統一圖片寬度 */
+            height: 200px; /* 統一圖片高度 */
+            object-fit: cover; /* 保持圖片比例 */
+            border-radius: 10px;
+        }
+
+        .photo-gallery .photo-item h3 {
+            color: #a7a58e; /* 小標題顏色 */
+            font-size: 1.2em;
+            margin: 10px 0 5px 0;
+        }
+
+        .photo-gallery .photo-item p {
+            color: #fff; /* 內容文字顏色 */
+            font-size: 1em;
+            text-align: left;
+            display: none; /* 初始隱藏 */
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            font-size: 1em;
+            background: none;
+            border: none;
+            color: #a7a58e; /* 修改按钮默认颜色 */
+        }
+
+        .toggle-btn:hover {
+            color: #ff0000; /* 修改按钮悬停时的颜色 */
+        }
+        /* 頁尾樣式 */
+        footer {
+                    background-color: #000000; /* 頁尾背景顏色 */
+                    color: #888888; /* 頁尾文字顏色 */
+                    text-align: center;
+                    padding: 20px 0;
+                    position: relative;
+                    bottom: 0;
+                    width: 100%;
+                }
+    </style>
+</head>
+<body>
+    <!-- 頁頭 -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="首頁.html">首頁</a></li>
+                <li class="nav-item">
+                    <a href="#">關於沖繩</a>
+                    <ul class="dropdown">
+                        <li><a href="關於沖繩-沖繩簡介.html">沖繩簡介</a></li>
+                        <li><a href="關於沖繩-歷史文化.html">歷史文化</a></li>
+                        <li><a href="關於沖繩-地理位置.html">地理位置</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">景點推薦</a>
+                    <ul class="dropdown">
+                        <li><a href="景點推薦-名勝古蹟.html">名勝古蹟</a></li>
+                        <li><a href="景點推薦-自然景觀.html">自然景觀</a></li>
+                        <li><a href="景點推薦-主題公園.html">主題公園</a></li>
+                        <li><a href="景點推薦-博物館和美術館.html">博物館&美術館</a></li>
+                        <li><a href="景點推薦-海灘.html">海灘</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">美食</a>
+                    <ul class="dropdown">
+                        <li><a href="美食-特色餐廳.html">特色餐廳</a></li>
+                        <li><a href="美食-當地小吃.html">當地小吃</a></li>
+                        <li><a href="美食-美食推薦.html">美食推薦</a></li>
+                        <li><a href="美食-夜生活.html">夜生活</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">住宿</a>
+                    <ul class="dropdown">
+                        <li><a href="住宿-飯店.html">飯店</a></li>
+                        <li><a href="住宿-民宿.html">民宿</a></li>
+                        <li><a href="住宿-度假村.html">度假村</a></li>
+                        <li><a href="住宿-青年旅社.html">青年旅社</a></li>
+                        <li><a href="住宿-特色住宿.html">特色住宿</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">旅遊攻略</a>
+                    <ul class="dropdown">
+                        <li><a href="旅遊攻略-交通.html">交通</a></li>
+                        <li><a href="旅遊攻略-購物.html">購物</a></li>
+                        <li><a href="旅遊攻略-本地習俗.html">本地習俗</a></li>
+                        <li><a href="旅遊攻略-旅遊安全指示.html">旅遊安全指示</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">活動&節日</a>
+                    <ul class="dropdown">
+                        <li><a href="活動和節日-當地節日.html">當地節日</a></li>
+                        <li><a href="活動和節日-特色活動.html">特色活動</a></li>
+                        <li><a href="活動和節日-音樂會和表演.html">音樂會&表演</a></li>
+                        <li><a href="活動和節日-運動賽事.html">運動賽事</a></li>
+                        <li><a href="活動和節日-展覽.html">展覽</a></li>
+                    </ul>
+                </li>
+                <li><a href="聯絡我們.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 大標題區域 -->
+    <div class="main-title">
+        <h1>自然景觀</h1>
+    </div>
+
+    <!-- 主要內容區域 -->
+    <main>
+        <section class="content-section">
+            <!-- 第一排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="自然景觀-萬座毛.jpg" alt="萬座毛">
+                    <h3>萬座毛</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於沖繩本島西海岸，是一處以壯麗的斷崖和廣闊的草原而著稱的自然景觀。斷崖直面大海，景色壯觀。名稱意為「可容納萬人的草地」，是沖繩最受歡迎的旅遊景點之一。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="自然景觀-古宇利大橋.JPG" alt="古宇利大橋">
+                    <h3>古宇利大橋</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>連接沖繩本島與古宇利島，全長約2公里的大橋，擁有絕美的海景。橋上可以欣賞到蔚藍的大海和四周的珊瑚礁。古宇利島以其清澈的海水和美麗的海灘聞名，是浮潛和海上活動的理想地點。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="自然景觀-青洞.jpg" alt="青洞">
+                    <h3>青洞</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於沖繩本島的真榮田岬，以美麗的藍色海水而聞名的海蝕洞。洞內的海水在陽光的照射下呈現出神秘的藍色，是潛水和浮潛的熱門地點。青洞的獨特景觀吸引了大量的遊客和潛水愛好者。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="自然景觀-川平灣.jpg" alt="川平灣">
+                    <h3>川平灣</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於石垣島，是沖繩最美麗的海灣之一。以其碧綠的海水和白色的沙灘而聞名，被認為是沖繩最具代表性的景點之一。川平灣也是黑珍珠養殖的著名地點，遊客可以乘坐玻璃底船欣賞海底美景。</p>
+                </div>
+            </div>
+
+            <!-- 第二排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="自然景觀-波照間島.jpg" alt="波照間島">
+                    <h3>波照間島</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>是日本最南端的有人島，以其清澈見底的海水和星空聞名。這裡的星空被認為是日本最美的星空之一，特別是可以觀賞到南十字星。波照間島的海灘也是潛水和浮潛的理想地點。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="自然景觀-西表島.jpg" alt="西表島">
+                    <h3>西表島</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>是沖繩縣內僅次於沖繩本島的第二大島，擁有豐富的自然資源和多樣的生態系統。島上覆蓋著熱帶雨林，有許多瀑布、河流和紅樹林，是自然愛好者的天堂。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="自然景觀-石垣島.jpg" alt="石垣島">
+                    <h3>石垣島</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>是沖繩縣八重山群島的一部分，以其美麗的海灘、清澈的海水和豐富的珊瑚礁生態系統而聞名。這裡是潛水和浮潛的熱門地點，遊客可以在水下欣賞色彩斑斕的魚群和珊瑚。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="自然景觀-小濱島.jpg" alt="小濱島">
+                    <h3>小濱島</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>是八重山群島中的一個小島，以其寧靜的氛圍和美麗的海灘而吸引遊客。擁有優美的自然景觀，是一個理想的度假勝地。島上還有許多徒步路線，可以讓遊客充分體驗大自然的美妙。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>&copy; 2024 沖繩旅遊網. 保留所有權利.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const description = button.nextElementSibling;
+                if (description.style.display === 'none' || description.style.display === '') {
+                    description.style.display = 'block';
+                    button.textContent = '△';
+                } else {
+                    description.style.display = 'none';
+                    button.textContent = '▽';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
