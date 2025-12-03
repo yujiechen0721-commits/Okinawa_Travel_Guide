@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅遊安全指示</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 全局樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* 整個頁面的底色設置為黑色 */
+            color: #fff; /* 頁面文字顏色設置為白色 */
+        }
+
+        /* 頁頭和導航列樣式 */
+        header {
+            background-color: #1c1c1c; /* 導航列背景顏色 */
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            list-style: none; /* 移除項目符號 */
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #e0e0e0; /* 導航按鈕文字顏色 */
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #333333;
+        }
+
+        nav ul li ul.dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333333; /* 下拉選單背景顏色 */
+            padding: 0;
+            border-radius: 4px;
+        }
+
+        nav ul li:hover ul.dropdown {
+            display: block;
+        }
+
+        nav ul li ul.dropdown li {
+            width: 200px;
+        }
+
+        nav ul li ul.dropdown li a {
+            padding: 10px;
+            border-bottom: 1px solid #444444;
+        }
+
+        nav ul li ul.dropdown li a:hover {
+            background-color: #444444;
+        }
+
+        nav ul li.nav-item > a {
+            pointer-events: none; /* 禁止主页面链接点击 */
+        }
+
+        /* 大標題區域樣式 */
+        .main-title {
+            background-image: url('旅遊安全指示封面圖.jpg'); /* 保持圖片路徑正確 */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* 大標題文字顏色 */
+            padding: 235px 20px; /* 調整內邊距來留出邊緣 */
+            margin: 20px; /* 增加外邊距來留出邊緣 */
+            border-radius: 15px; /* 可選：添加圓角效果 */
+        }
+
+        .main-title h1 {
+            font-size: 3em;
+            margin: 0;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        /* 內容區域樣式 */
+        .content-section {
+            padding: 50px 20px;
+        }
+
+        .content-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* 照片和說明的樣式 */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .photo-gallery .photo-item {
+            width: 22%; /* 確保每行四張圖片 */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .photo-gallery .photo-item img {
+            width: 250px; /* 統一圖片寬度 */
+            height: 200px; /* 統一圖片高度 */
+            object-fit: cover; /* 保持圖片比例 */
+            border-radius: 10px;
+        }
+
+        .photo-gallery .photo-item h3 {
+            color: #a7a58e; /* 小標題顏色 */
+            font-size: 1.2em;
+            margin: 10px 0 5px 0;
+        }
+
+        .photo-gallery .photo-item p {
+            color: #fff; /* 內容文字顏色 */
+            font-size: 1em;
+            text-align: left;
+            display: none; /* 初始隱藏 */
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            font-size: 1em;
+            background: none;
+            border: none;
+            color: #a7a58e; /* 修改按钮默认颜色 */
+        }
+
+        .toggle-btn:hover {
+            color: #ff0000; /* 修改按钮悬停时的颜色 */
+        }
+        /* 頁尾樣式 */
+        footer {
+                    background-color: #000000; /* 頁尾背景顏色 */
+                    color: #888888; /* 頁尾文字顏色 */
+                    text-align: center;
+                    padding: 20px 0;
+                    position: relative;
+                    bottom: 0;
+                    width: 100%;
+                }
+    </style>
+</head>
+<body>
+    <!-- 頁頭 -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="首頁.html">首頁</a></li>
+                <li class="nav-item">
+                    <a href="#">關於沖繩</a>
+                    <ul class="dropdown">
+                        <li><a href="關於沖繩-沖繩簡介.html">沖繩簡介</a></li>
+                        <li><a href="關於沖繩-歷史文化.html">歷史文化</a></li>
+                        <li><a href="關於沖繩-地理位置.html">地理位置</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">景點推薦</a>
+                    <ul class="dropdown">
+                        <li><a href="景點推薦-名勝古蹟.html">名勝古蹟</a></li>
+                        <li><a href="景點推薦-自然景觀.html">自然景觀</a></li>
+                        <li><a href="景點推薦-主題公園.html">主題公園</a></li>
+                        <li><a href="景點推薦-博物館和美術館.html">博物館&美術館</a></li>
+                        <li><a href="景點推薦-海灘.html">海灘</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">美食</a>
+                    <ul class="dropdown">
+                        <li><a href="美食-特色餐廳.html">特色餐廳</a></li>
+                        <li><a href="美食-當地小吃.html">當地小吃</a></li>
+                        <li><a href="美食-美食推薦.html">美食推薦</a></li>
+                        <li><a href="美食-夜生活.html">夜生活</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">住宿</a>
+                    <ul class="dropdown">
+                        <li><a href="住宿-飯店.html">飯店</a></li>
+                        <li><a href="住宿-民宿.html">民宿</a></li>
+                        <li><a href="住宿-度假村.html">度假村</a></li>
+                        <li><a href="住宿-青年旅社.html">青年旅社</a></li>
+                        <li><a href="住宿-特色住宿.html">特色住宿</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">旅遊攻略</a>
+                    <ul class="dropdown">
+                        <li><a href="旅遊攻略-交通.html">交通</a></li>
+                        <li><a href="旅遊攻略-購物.html">購物</a></li>
+                        <li><a href="旅遊攻略-本地習俗.html">本地習俗</a></li>
+                        <li><a href="旅遊攻略-旅遊安全指示.html">旅遊安全指示</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">活動&節日</a>
+                    <ul class="dropdown">
+                        <li><a href="活動和節日-當地節日.html">當地節日</a></li>
+                        <li><a href="活動和節日-特色活動.html">特色活動</a></li>
+                        <li><a href="活動和節日-音樂會和表演.html">音樂會&表演</a></li>
+                        <li><a href="活動和節日-運動賽事.html">運動賽事</a></li>
+                        <li><a href="活動和節日-展覽.html">展覽</a></li>
+                    </ul>
+                </li>
+                <li><a href="聯絡我們.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 大標題區域 -->
+    <div class="main-title">
+        <h1>旅遊安全指示</h1>
+    </div>
+
+    <!-- 主要內容區域 -->
+    <main>
+        <section class="content-section">
+            <!-- 第一排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="旅遊安全指示-交通安全.jpg" alt="交通安全">
+                    <h3>交通安全</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>--駕駛規則--
+                        <br>1.在沖繩，汽車靠左行駛。請遵守當地交通規則，特別是在轉彎、紅綠燈和人行橫道處。
+                        <br>2.自駕時請注意道路標示，並保持適當的車速。許多道路狹窄，特別是在鄉村地區。
+                        <br>--單軌電車和巴士--
+                        <br>1.搭乘單軌電車和巴士時，請注意保持站立穩定，並緊握扶手。
+                        <br>2.下車時請注意周圍的車輛和行人，避免突然跨步或奔跑。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="旅遊安全指示-自然災害.png" alt="自然災害">
+                    <h3>自然災害</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>--颱風季節--
+                        <br>1.沖繩位於颱風多發地區，特別是在夏季和秋季。請在出行前查詢天氣預報，並遵循當地政府的安全指示。
+                        <br>2.在颱風期間，盡量避免外出，留在安全的室內場所。
+                        <br>--地震--
+                        <br>1.沖繩地處地震帶，偶爾會發生地震。請了解當地的應急疏散路線，並在地震發生時保持冷靜，迅速尋找掩護。</p>
+                </div>
+            </div>
+
+            <!-- 第二排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="旅遊安全指示-健康和醫療.jpg" alt="健康和醫療">
+                    <h3>健康和醫療</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>--健康預防措施--
+                        <br>1.在旅行前，請確保接種必要的疫苗，並攜帶常用藥物和急救用品。
+                        <br>2.保持良好的衛生習慣，勤洗手，避免食用未經處理的生鮮食品和飲用未經消毒的水。
+                        <br>--緊急醫療服務--
+                        <br>1.了解當地的緊急醫療服務聯絡方式（日本的緊急電話號碼是119）。
+                        <br>2.記下附近醫院或診所的位置，以便在需要時快速尋求醫療幫助。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="旅遊安全指示-一般安全建議.jpg" alt="一般安全建議">
+                    <h3>一般安全建議</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>--個人財物--
+                        <br>1.保管好個人財物，避免隨身攜帶大量現金或貴重物品。使用酒店保險箱存放貴重物品。
+                        <br>2.在公共場所注意隨身物品，避免無人看管的情況。
+                        <br>--戶外活動安全--
+                        <br>1.參加水上活動（如浮潛、潛水）時，請務必使用專業裝備，並遵從教練或導遊的指示。
+                        <br>2.在海灘遊玩時，注意海浪和潮汐變化，避免游到無人看管的海域。
+                        <br>3.登山或徒步時，穿著適當的登山鞋和裝備，並告知他人您的行程計劃。
+                        <br>--當地法律和習俗--
+                        <br>1.遵守當地法律和習俗，尊重當地文化。避免在公共場所吸煙或大聲喧嘩，保持良好的遊客形象。
+                        <br>2.在參觀寺廟或其他宗教場所時，請注意穿著得體，並遵守拍攝和參觀規則。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>&copy; 2024 沖繩旅遊網. 保留所有權利.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const description = button.nextElementSibling;
+                if (description.style.display === 'none' || description.style.display === '') {
+                    description.style.display = 'block';
+                    button.textContent = '△';
+                } else {
+                    description.style.display = 'none';
+                    button.textContent = '▽';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
