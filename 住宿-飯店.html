@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飯店</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 全局樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* 整個頁面的底色設置為黑色 */
+            color: #fff; /* 頁面文字顏色設置為白色 */
+        }
+
+        /* 頁頭和導航列樣式 */
+        header {
+            background-color: #1c1c1c; /* 導航列背景顏色 */
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            list-style: none; /* 移除項目符號 */
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #e0e0e0; /* 導航按鈕文字顏色 */
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #333333;
+        }
+
+        nav ul li ul.dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333333; /* 下拉選單背景顏色 */
+            padding: 0;
+            border-radius: 4px;
+        }
+
+        nav ul li:hover ul.dropdown {
+            display: block;
+        }
+
+        nav ul li ul.dropdown li {
+            width: 200px;
+        }
+
+        nav ul li ul.dropdown li a {
+            padding: 10px;
+            border-bottom: 1px solid #444444;
+        }
+
+        nav ul li ul.dropdown li a:hover {
+            background-color: #444444;
+        }
+
+        nav ul li.nav-item > a {
+            pointer-events: none; /* 禁止主页面链接点击 */
+        }
+
+        /* 大標題區域樣式 */
+        .main-title {
+            background-image: url('飯店封面圖.jpg'); /* 保持圖片路徑正確 */
+            background-size: cover;
+            background-position: center;
+            color: #020202; /* 大標題文字顏色 */
+            padding: 235px 20px; /* 調整內邊距來留出邊緣 */
+            margin: 20px; /* 增加外邊距來留出邊緣 */
+            border-radius: 15px; /* 可選：添加圓角效果 */
+        }
+
+        .main-title h1 {
+            font-size: 3em;
+            margin: 0;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        /* 內容區域樣式 */
+        .content-section {
+            padding: 50px 20px;
+        }
+
+        .content-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* 照片和說明的樣式 */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .photo-gallery .photo-item {
+            width: 22%; /* 確保每行四張圖片 */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .photo-gallery .photo-item img {
+            width: 250px; /* 統一圖片寬度 */
+            height: 200px; /* 統一圖片高度 */
+            object-fit: cover; /* 保持圖片比例 */
+            border-radius: 10px;
+        }
+
+        .photo-gallery .photo-item h3 {
+            color: #a7a58e; /* 小標題顏色 */
+            font-size: 1.2em;
+            margin: 10px 0 5px 0;
+        }
+
+        .photo-gallery .photo-item p {
+            color: #fff; /* 內容文字顏色 */
+            font-size: 1em;
+            text-align: left;
+            display: none; /* 初始隱藏 */
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            font-size: 1em;
+            background: none;
+            border: none;
+            color: #a7a58e; /* 修改按钮默认颜色 */
+        }
+
+        .toggle-btn:hover {
+            color: #ff0000; /* 修改按钮悬停时的颜色 */
+        }
+        /* 頁尾樣式 */
+        footer {
+                    background-color: #000000; /* 頁尾背景顏色 */
+                    color: #888888; /* 頁尾文字顏色 */
+                    text-align: center;
+                    padding: 20px 0;
+                    position: relative;
+                    bottom: 0;
+                    width: 100%;
+                }
+    </style>
+</head>
+<body>
+    <!-- 頁頭 -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="首頁.html">首頁</a></li>
+                <li class="nav-item">
+                    <a href="#">關於沖繩</a>
+                    <ul class="dropdown">
+                        <li><a href="關於沖繩-沖繩簡介.html">沖繩簡介</a></li>
+                        <li><a href="關於沖繩-歷史文化.html">歷史文化</a></li>
+                        <li><a href="關於沖繩-地理位置.html">地理位置</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">景點推薦</a>
+                    <ul class="dropdown">
+                        <li><a href="景點推薦-名勝古蹟.html">名勝古蹟</a></li>
+                        <li><a href="景點推薦-自然景觀.html">自然景觀</a></li>
+                        <li><a href="景點推薦-主題公園.html">主題公園</a></li>
+                        <li><a href="景點推薦-博物館和美術館.html">博物館&美術館</a></li>
+                        <li><a href="景點推薦-海灘.html">海灘</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">美食</a>
+                    <ul class="dropdown">
+                        <li><a href="美食-特色餐廳.html">特色餐廳</a></li>
+                        <li><a href="美食-當地小吃.html">當地小吃</a></li>
+                        <li><a href="美食-美食推薦.html">美食推薦</a></li>
+                        <li><a href="美食-夜生活.html">夜生活</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">住宿</a>
+                    <ul class="dropdown">
+                        <li><a href="住宿-飯店.html">飯店</a></li>
+                        <li><a href="住宿-民宿.html">民宿</a></li>
+                        <li><a href="住宿-度假村.html">度假村</a></li>
+                        <li><a href="住宿-青年旅社.html">青年旅社</a></li>
+                        <li><a href="住宿-特色住宿.html">特色住宿</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">旅遊攻略</a>
+                    <ul class="dropdown">
+                        <li><a href="旅遊攻略-交通.html">交通</a></li>
+                        <li><a href="旅遊攻略-購物.html">購物</a></li>
+                        <li><a href="旅遊攻略-本地習俗.html">本地習俗</a></li>
+                        <li><a href="旅遊攻略-旅遊安全指示.html">旅遊安全指示</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">活動&節日</a>
+                    <ul class="dropdown">
+                        <li><a href="活動和節日-當地節日.html">當地節日</a></li>
+                        <li><a href="活動和節日-特色活動.html">特色活動</a></li>
+                        <li><a href="活動和節日-音樂會和表演.html">音樂會&表演</a></li>
+                        <li><a href="活動和節日-運動賽事.html">運動賽事</a></li>
+                        <li><a href="活動和節日-展覽.html">展覽</a></li>
+                    </ul>
+                </li>
+                <li><a href="聯絡我們.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 大標題區域 -->
+    <div class="main-title">
+        <h1>飯店</h1>
+    </div>
+
+    <!-- 主要內容區域 -->
+    <main>
+        <section class="content-section">
+            <!-- 第一排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="飯店1-Sheraton Okinawa Sunmarina Resort.jpg" alt="Sheraton Okinawa Sunmarina Resort">
+                    <h3>Sheraton Okinawa Sunmarina Resort</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於恩納村，擁有私人沙灘和多種水上活動設施。可以欣賞到美麗的海景。這裡有多家餐廳，提供包括日本料理、海鮮和國際美食在內的多種選擇。度假村內還有多種休閒設施，適合家庭旅遊。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="飯店2-Okinawa Grand Mer Resort.jpg" alt="Okinawa Grand Mer Resort">
+                    <h3>Okinawa Grand Mer Resort</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於沖繩中部，擁有寬敞的客房和各種設施，包括室內游泳池、健身中心和多間餐廳。酒店提供免費的機場接駁服務，方便旅客出行。這家酒店靠近沖繩的主要旅遊景點，如美麗海水族館和首里城，是家庭旅遊的好選擇。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="飯店3-Rihga Royal Gran Okinawa.jpg" alt="Rihga Royal Gran Okinawa">
+                    <h3>Rihga Royal Gran Okinawa</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於那霸市，距離那霸機場僅有10分鐘車程。提供現代化的客房，設有海景房和城市景觀房。設有多家餐廳和酒吧，提供各種美食選擇。頂樓的露台酒吧是欣賞城市夜景和放鬆的好地方。提供完善的會議設施，是商務旅客的理想選擇。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="飯店4-Hilton Okinawa Chatan Resort.jpg" alt="Hilton Okinawa Chatan Resort">
+                    <h3>Hilton Okinawa Chatan Resort</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於北谷町的美國村附近，這是一個結合購物、娛樂和餐飲的綜合區域。設有現代化的客房和套房，提供多種休閒設施。酒店內的餐廳提供豐富的美食選擇，從傳統的沖繩料理到國際美食應有盡有。</p>
+                </div>
+            </div>
+
+            <!-- 第二排照片和說明 -->
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="飯店5-Hyatt Regency Seragaki Island Okinawa.jpg" alt="Hyatt Regency Seragaki Island Okinawa">
+                    <h3>Hyatt Regency Seragaki Island Okinawa</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於恩納村的私人小島上，擁有豪華的客房和套房，每間客房都擁有壯麗的海景。酒店提供多種水上活動。設有多家高級餐廳和酒吧，提供精緻的美食和飲品。還設有大型游泳池和水療中心，是享受休閒時光的理想場所。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="飯店6-ANA InterContinental Manza Beach Resort.jpg" alt="ANA InterContinental Manza Beach Resort">
+                    <h3>ANA InterContinental Manza Beach Resort</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於沖繩本島北部的恩納村，擁有私人沙灘和各種水上活動設施。這家豪華度假酒店設有多家餐廳，提供國際和本地美食。酒店還提供多種水療和美容服務，是放鬆身心的理想場所。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="飯店7-Halekulani Okinawa.jpg" alt="Halekulani Okinawa">
+                    <h3>Halekulani Okinawa</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於恩納村，是一家五星級度假酒店，擁有豪華的設施和優雅的環境。客房和套房設計精美。酒店設有多家高級餐廳和酒吧，提供精緻的料理和飲品。這裡還設有水療中心、健身房和多個游泳池，是放鬆和享受豪華假期的理想場所。</p>
+                </div>
+                <div class="photo-item">
+                    <img src="飯店8-Hotel Nikko Alivila.jpg" alt="Hotel Nikko Alivila">
+                    <h3>Hotel Nikko Alivila</h3>
+                    <button class="toggle-btn">▽</button>
+                    <p>位於沖繩本島中部的讀谷村，具有西班牙風格的度假酒店。可以欣賞到美麗的海景或花園景觀。酒店還設有多項活動設施，是享受海灘度假的理想場所。這裡的靜謐環境和優美景色，使其成為尋求放鬆和靜養的旅客的熱門選擇。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>&copy; 2024 沖繩旅遊網. 保留所有權利.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const description = button.nextElementSibling;
+                if (description.style.display === 'none' || description.style.display === '') {
+                    description.style.display = 'block';
+                    button.textContent = '△';
+                } else {
+                    description.style.display = 'none';
+                    button.textContent = '▽';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
