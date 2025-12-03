@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地理位置</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* 內容區域樣式 */
+        .content-section img {
+            width: 200px; /* 調整寬度 */
+            height: 200px; /* 調整高度 */
+            margin-right: 20px;
+            border-radius: 10px; /* 圓角處理 */
+        }
+
+        .content-section p {
+            max-width: 600px;
+            line-height: 2; /* 調整文字行距，你可以更改此處值來調整行距 */
+            text-align: left; /* 讓文字靠左對齊 */
+        }
+        /* 全局樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* 整個頁面的底色設置為黑色 */
+            color: #fff; /* 頁面文字顏色設置為白色 */
+        }
+
+        /* 頁頭和導航列樣式 */
+        header {
+            background-color: #1c1c1c; /* 導航列背景顏色 */
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            list-style: none; /* 移除項目符號 */
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #e0e0e0; /* 導航按鈕文字顏色 */
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #333333;
+        }
+
+        nav ul li ul.dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333333; /* 下拉選單背景顏色 */
+            padding: 0;
+            border-radius: 4px;
+        }
+
+        nav ul li:hover ul.dropdown {
+            display: block;
+        }
+
+        nav ul li ul.dropdown li {
+            width: 200px;
+        }
+
+        nav ul li ul.dropdown li a {
+            padding: 10px;
+            border-bottom: 1px solid #444444;
+        }
+
+        nav ul li ul.dropdown li a:hover {
+            background-color: #444444;
+        }
+
+        nav ul li.nav-item > a {
+            pointer-events: none; /* 禁止主页面链接点击 */
+        }
+
+        /* 主要內容區域樣式 */
+        main {
+            text-align: center;
+        }
+
+        /* 大標題區域樣式 */
+        .main-title {
+            background-image: url('地理位置封面圖.jpg'); /* 保持圖片路徑正確 */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* 大標題文字顏色 */
+            padding: 235px 20px; /* 調整內邊距來留出邊緣 */
+            margin: 20px; /* 增加外邊距來留出邊緣 */
+            border-radius: 15px; /* 可選：添加圓角效果 */
+        }
+
+        .main-title h1 {
+            font-size: 2.5em;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        /* 內容區域樣式 */
+        .content-section {
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .content-section img {
+            width: 300px; /* 調整寬度 */
+            height: 250px; /* 調整高度 */
+            margin-right: 20px;
+            border-radius: 10px; /* 圓角處理 */
+        }
+
+        .content-section p {
+            max-width: 600px;
+        }
+
+        /* 頁尾樣式 */
+        footer {
+            background-color: #000000; /* 頁尾背景顏色 */
+            color: #888888; /* 頁尾文字顏色 */
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- 頁頭 -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="首頁.html">首頁</a></li>
+                <li class="nav-item">
+                    <a href="#">關於沖繩</a>
+                    <ul class="dropdown">
+                        <li><a href="關於沖繩-沖繩簡介.html">沖繩簡介</a></li>
+                        <li><a href="關於沖繩-歷史文化.html">歷史文化</a></li>
+                        <li><a href="關於沖繩-地理位置.html">地理位置</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">景點推薦</a>
+                    <ul class="dropdown">
+                        <li><a href="景點推薦-名勝古蹟.html">名勝古蹟</a></li>
+                        <li><a href="景點推薦-自然景觀.html">自然景觀</a></li>
+                        <li><a href="景點推薦-主題公園.html">主題公園</a></li>
+                        <li><a href="景點推薦-博物館和美術館.html">博物館&美術館</a></li>
+                        <li><a href="景點推薦-海灘.html">海灘</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">美食</a>
+                    <ul class="dropdown">
+                        <li><a href="美食-特色餐廳.html">特色餐廳</a></li>
+                        <li><a href="美食-當地小吃.html">當地小吃</a></li>
+                        <li><a href="美食-美食推薦.html">美食推薦</a></li>
+                        <li><a href="美食-夜生活.html">夜生活</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">住宿</a>
+                    <ul class="dropdown">
+                        <li><a href="住宿-飯店.html">飯店</a></li>
+                        <li><a href="住宿-民宿.html">民宿</a></li>
+                        <li><a href="住宿-度假村.html">度假村</a></li>
+                        <li><a href="住宿-青年旅社.html">青年旅社</a></li>
+                        <li><a href="住宿-特色住宿.html">特色住宿</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">旅遊攻略</a>
+                    <ul class="dropdown">
+                        <li><a href="旅遊攻略-交通.html">交通</a></li>
+                        <li><a href="旅遊攻略-購物.html">購物</a></li>
+                        <li><a href="旅遊攻略-本地習俗.html">本地習俗</a></li>
+                        <li><a href="旅遊攻略-旅遊安全指示.html">旅遊安全指示</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">活動&節日</a>
+                    <ul class="dropdown">
+                        <li><a href="活動和節日-當地節日.html">當地節日</a></li>
+                        <li><a href="活動和節日-特色活動.html">特色活動</a></li>
+                        <li><a href="活動和節日-音樂會和表演.html">音樂會&表演</a></li>
+                        <li><a href="活動和節日-運動賽事.html">運動賽事</a></li>
+                        <li><a href="活動和節日-展覽.html">展覽</a></li>
+                    </ul>
+                </li>
+                <li><a href="聯絡我們.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 主要內容區域 -->
+    <main>
+        <div class="main-title">
+            <h1>地理位置</h1>
+        </div>
+        <section class="content-section">
+            <img src="地理位置-1.png" alt="沖繩">
+            <img src="地理位置-2.jpg" alt="沖繩">
+            <img src="地理位置-3.png" alt="沖繩">
+            <p>
+                沖繩位於日本的南部，處於九州和台灣之間的東海和太平洋交界處。沖繩縣由多個島嶼組成，其中最主要的島嶼是沖繩本島。這片群島地處亞熱帶地區，擁有溫暖的氣候和豐富的自然資源。沖繩的地理位置使其成為連接日本本土與東亞其他地區的重要樞紐，並且擁有得天獨厚的海洋生態系統和自然美景。 
+            </p>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>&copy; 2024 沖繩旅遊網. 保留所有權利.</p>
+    </footer>
+</body>
+</html>
