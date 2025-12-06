@@ -16,7 +16,6 @@ https://yujiechen0721-commits.github.io/Okinawa_Travel_Guide/
 - 活動與節日一覽
 
 ## 技術
-- 純HTML+CSS(無框架)
 - 響應式設計(RWD)
 - 部署於GitHub Pages
 
